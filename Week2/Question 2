@@ -1,0 +1,33 @@
+#include<iostream>
+#include<algorithm>
+
+using namespace std;
+
+#define max 100
+
+int main(void)
+{
+    int n,arr[max],i,diff,j,count=0;
+    cout<<"Enter the number of elements : ";
+    cin>>n;
+    
+    for(i=0;i<n;i++)
+    {    
+        cout<<"enter the "<<i+1<<" element:";  
+        cin>>arr[i];
+    }
+    cout<<"Enter the difference you want to find: ";
+    cin>>diff;
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if((abs(arr[i]-arr[j])) == diff)
+            {
+                count++;
+            }
+        }
+    }
+    cout<<"No. of pairs = "<<count; 
+    return 0;
+}
