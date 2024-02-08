@@ -7,7 +7,7 @@ using namespace std;
 int main(void)
 {
     //Declairing vars
-    int n,arr[max],i,j,f=0;
+    int n,arr[max],i,j,k,f=0;
     cout<<"Enter the number of elements : ";
     cin>>n;
 
@@ -17,9 +17,7 @@ int main(void)
         cout<<"enter the "<<i<<" element:";  
         cin>>arr[i];
     }
-    
-    int k;
-    
+
     //finding the positions
     for(k=n;k>1;k--)
     {
