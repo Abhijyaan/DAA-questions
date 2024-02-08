@@ -1,0 +1,42 @@
+#include<iostream>
+
+using namespace std;
+
+#define max 100
+
+int main(void)
+{
+    //Declairing vars
+    int n,arr[max],i,j,temp=0;
+    cout<<"Enter the number of elements : ";
+    cin>>n;
+    
+    //input
+    for(i=0;i<n;i++)
+    {    
+        cout<<"enter the "<<i+1<<" element:";  
+        cin>>arr[i];
+    }
+    
+    //Insertion sort
+    for(i=1;i<n;i++)
+    {
+        j=i-1;
+        temp=arr[i];
+        while( (j>-1) && (arr[j]>temp) )
+        {
+            arr[j+1]=arr[j];
+            j--;
+        }
+        arr[j+1]=temp;
+    }
+    
+    //output
+    for(i=0;i<n;i++)
+    {    
+        cout<<"The "<<i+1<<" element:";  
+        cout<<arr[i]<<endl;
+    }
+
+    return 0;
+}
