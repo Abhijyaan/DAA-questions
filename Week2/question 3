@@ -1,0 +1,43 @@
+#include<iostream>
+
+using namespace std;
+
+#define max 100
+
+int main(void)
+{
+    //Declairing vars
+    int n,arr[max],i,j,k,f=0;
+    cout<<"Enter the number of elements : ";
+    cin>>n;
+
+    //input
+    for(i=0;i<n;i++)
+    {    
+        cout<<"enter the "<<i+1<<" element:";  
+        cin>>arr[i];
+    }
+    
+    //finding the positions
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            for(k=j;k<n;k++)
+            {
+                if( (arr[i]+arr[j]) == (arr[k]) )   //printing the positions
+                {
+                    cout<<i+1<<" , "<<j+1<<" , "<<k+1<<endl;
+                    f=1;
+                }
+            }
+        }
+    }
+    
+    //if no such sequence found
+    if(f==0)  
+    {
+        cout<<"no sequence found"<<endl;
+    }
+    return 0;
+}
