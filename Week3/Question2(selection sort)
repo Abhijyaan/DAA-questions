@@ -1,0 +1,50 @@
+#include<iostream>
+
+using namespace std;
+
+#define max 100
+
+int main(void)
+{
+    //Declairing vars
+    int n,arr[max],i,j,k,min=0,comp=0,swap=0;
+    cout<<"Enter the number of elements : ";
+    cin>>n;
+    
+    //input
+    for(i=0;i<n;i++)
+    {    
+        cout<<"enter the "<<i+1<<" element:";  
+        cin>>arr[i];
+    }
+    
+    //Selection sort
+    for(i=0;i<n-1;i++)
+    {
+        min=i;
+        for(j=i+1;j<n;j++)
+        {
+            comp++;
+            if(arr[min]>arr[j])
+            {
+                min=j;
+            }
+        }
+        if(arr[min]!=arr[i])
+        {
+            k=arr[min];
+            arr[min]=arr[i];
+            arr[i]=k;
+            swap++;
+        }
+    }
+    
+    //output
+    for(i=0;i<n;i++)
+    {    
+        cout<<"The "<<i+1<<" element:";  
+        cout<<arr[i]<<endl;
+    }
+    cout<< comp<<" , "<<swap;
+    return 0;
+}
